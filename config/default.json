@@ -1,0 +1,8 @@
+{
+  "rabbitmq-server-url": "amqp://address.to.rabbitmq.server.with.port.and.vhost.if.any",
+  "rabbitmq-management-url": "http://address.to.management.page.with.port",
+  "rabbitmq-management-username": "username",
+  "rabbitmq-management-password": "password",
+  "filter-default-exchanges": true,
+  "filter-default-queues": true
+}

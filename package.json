@@ -1,0 +1,30 @@
+{
+  "name": "velveteen",
+  "version": "0.1.0",
+  "description": "message utilities for rabbitMQ written in nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gehsekky/velveteen.git"
+  },
+  "author": "gehsekky",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gehsekky/velveteen/issues"
+  },
+  "homepage": "https://github.com/gehsekky/velveteen#readme",
+  "devDependencies": {
+    "yarn": "^0.19.1"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.1",
+    "config": "^1.25.1",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-eslint": "^3.0.1",
+    "rest": "^2.0.0"
+  }
+}
