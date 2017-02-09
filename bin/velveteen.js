@@ -3,12 +3,41 @@
 
 const readline = require('readline');
 const packageJson = require('../package.json');
-const listExchanges = require('../lib/list-exchanges');
-const listQueues = require('../lib/list-queues');
+const getExchanges = require('../lib/get-exchanges');
+const getQueues = require('../lib/get-queues');
 const showMessages = require('../lib/show-messages');
 
+///////////////////////////////////////////////////////////////////////////////
+// utility methods
+///////////////////////////////////////////////////////////////////////////////
 
+/**
+ * print out a list of the rabbitmq exchanges on server
+ */
+function listExchanges() {
+  return getExchanges()
+  .then(exchanges => {
+    for (const exchange of exchanges) {
+      console.log(exchange.name);
+    }
+  })
+}
 
+/**
+ * print out a list of the rabbitmq queues on server
+ */
+function listQueues() {
+  return getQueues()
+  .then(queues => {
+    for (const queue of queues) {
+      console.log(queue.name);
+    }
+  })
+}
+
+///////////////////////////////////////////////////////////////////////////////
+// script methods
+///////////////////////////////////////////////////////////////////////////////
 function getMenu() {
   let menu = '\nPlease choose from the following:\n\n';
   menu += '1) list exchanges\n';
@@ -32,17 +61,13 @@ const menuLoop = () => {
       switch(answer) {
         case '1':
           return listExchanges();
-          break;
         case '2':
           return listQueues();
-          break;
         case '3':
           return showMessages();
-          break;
         case '4':
           consoleInterface.close();
           process.exit();
-          break;
       }
     })
     .then(() => {
